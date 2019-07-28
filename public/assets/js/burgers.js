@@ -22,19 +22,26 @@ $(function() {
 
         console.log("name " + $("#burg").val().trim());
 
-        var newBurger = {
-            name: $("#burg").val().trim(),
-            devoured: 0
-        };
+        if ($("#burg").val() === "") {
+            alert("Enter a burger name");
+            // $("#exampleModal").modal("toggle");
+        }
 
-        $.ajax("/api/burgers", {
-            type: "POST",
-            data: newBurger
-        }).then(
-            function() {
-                console.log("created new burger");
-                location.reload();
-            }
-        );
+        else {
+            var newBurger = {
+                name: $("#burg").val().trim(),
+                devoured: 0
+            };
+
+            $.ajax("/api/burgers", {
+                type: "POST",
+                data: newBurger
+            }).then(
+                function() {
+                    console.log("created new burger");
+                    location.reload();
+                }
+            );
+        }
     });
 });

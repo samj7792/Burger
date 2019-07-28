@@ -1,0 +1,14 @@
+body {
+    background: rosybrown;
+}
+
+#title {
+    text-align: center;
+}
+
+#burger {
+    align-content: center;
+    height: 30%;
+    width: 30%;
+    margin: 10px;
+}

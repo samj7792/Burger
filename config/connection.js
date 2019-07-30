@@ -1,19 +1,11 @@
-var mysql = require("mysql");
+const mysql = require("mysql");
+const keys = require("./keys");
 
-var connection = mysql.createConnection({
-    host: "localhost",
-    port: 3306,
-    user: "root",
-    password: "",
-    database: "burgers_db"
-});
+const connection = mysql.createConnection(keys.mysql);
 
-connection.connect(function(err) {
-    if(err) {
-        console.error("error connecting: " + err.stack);
-        return;
-    }
-    console.log("connected as id " + connection.threadId);
+connection.connect(err=> {
+    if (err) throw err;
+    console.log("DB is online");
 });
 
 module.exports = connection;

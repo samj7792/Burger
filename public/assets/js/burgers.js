@@ -24,7 +24,7 @@ $(function() {
 
         if ($("#burg").val() === "") {
             alert("Enter a burger name");
-            // $("#exampleModal").modal("toggle");
+            // $("#modal").modal("toggle");
         }
 
         else {
